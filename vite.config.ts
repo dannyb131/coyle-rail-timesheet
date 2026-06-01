@@ -26,19 +26,19 @@ export default defineConfig({
         start_url: '/coyle-rail-timesheet/',
         icons: [
           {
-            src: '/icon-192.png',
+            src: '/coyle-rail-timesheet/icon-192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any maskable',
           },
           {
-            src: '/icon-512.png',
+            src: '/coyle-rail-timesheet/icon-512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable',
           },
           {
-            src: '/favicon.svg',
+            src: '/coyle-rail-timesheet/favicon.svg',
             sizes: 'any',
             type: 'image/svg+xml',
             purpose: 'any maskable',

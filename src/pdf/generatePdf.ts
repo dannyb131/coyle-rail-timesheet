@@ -67,7 +67,7 @@ export async function generatePdf(timesheet: Timesheet): Promise<Uint8Array> {
 
   let logoImg: any = null;
   try {
-    const resp = await fetch('/logo.jpg');
+    const resp = await fetch(`${import.meta.env.BASE_URL}logo.jpg`);
     if (resp.ok) {
       const buf = await resp.arrayBuffer();
       logoImg = await doc.embedJpg(new Uint8Array(buf));

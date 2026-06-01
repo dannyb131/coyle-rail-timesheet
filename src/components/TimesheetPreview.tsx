@@ -52,7 +52,7 @@ export default function TimesheetPreview({ timesheet }: Props) {
         {/* ===== TOP BAND: Logo | Address | Title ===== */}
         <tr>
           <td colSpan={3} style={{ ...cellBorder, padding: '6px 4px', verticalAlign: 'middle', textAlign: 'center' }}>
-            <img src="/logo.jpg" alt="Coyle Rail" style={{ maxHeight: 36, maxWidth: '100%' }} />
+            <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt="Coyle Rail" style={{ maxHeight: 36, maxWidth: '100%' }} />
           </td>
           <td colSpan={5} style={{ ...cellBorder, padding: '4px', verticalAlign: 'middle', textAlign: 'center', fontSize: 8, lineHeight: 1.5 }}>
             <strong>HYGEIA,</strong> 66-68 COLLEGE ROAD,<br />

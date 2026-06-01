@@ -43,7 +43,7 @@ function SignaturePad({
       img.onload = () => {
         const ctx = sigRef.current?.getCanvas()?.getContext('2d');
         if (ctx) {
-          ctx.drawImage(img, 0, 0, 280, 100);
+          ctx.drawImage(img, 0, 0, 600, 180);
           setSigned(true);
         }
       };
@@ -69,11 +69,11 @@ function SignaturePad({
       <SignatureCanvas
         ref={sigRef}
         penColor="#000"
-        canvasProps={{
-          className: 'sig-pad',
-          width: 280,
-          height: 100,
-        }}
+          canvasProps={{
+            className: 'sig-pad',
+            width: 600,
+            height: 180,
+          }}
       />
       <div className="sig-actions">
         <button onClick={handleClear}>Clear</button>

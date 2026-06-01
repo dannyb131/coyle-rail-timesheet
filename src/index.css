@@ -523,7 +523,7 @@ body {
   border-radius: var(--radius);
   background: #fff;
   width: 100%;
-  height: 100px;
+  height: 180px;
   cursor: crosshair;
 }
 

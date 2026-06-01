@@ -9,12 +9,13 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>
 );
 
-const CACHE = 'app-v5';
+const CACHE = 'app-v6';
 async function populateCache() {
   if (!('caches' in window)) return;
   try {
     const cache = await caches.open(CACHE);
-    const urls = ['/index.html', '/', '/favicon.svg', '/icon-192.png', '/icon-512.png', '/logo.jpg', '/manifest.webmanifest', '/registerSW.js'];
+    const base = import.meta.env.BASE_URL;
+    const urls = [base + 'index.html', base, base + 'favicon.svg', base + 'icon-192.png', base + 'icon-512.png', base + 'logo.jpg', base + 'manifest.webmanifest', base + 'registerSW.js'];
     document.querySelectorAll('link[rel=stylesheet], link[rel=icon], link[rel=apple-touch-icon]').forEach(el => {
       const u = (el as HTMLLinkElement).href;
       if (u) urls.push(u);

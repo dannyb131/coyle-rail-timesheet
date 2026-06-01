@@ -4,6 +4,7 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: '/coyle-rail-timesheet/',
   server: {
     host: '0.0.0.0',
   },
@@ -21,8 +22,8 @@ export default defineConfig({
         background_color: '#f0f4f0',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/',
-        start_url: '/',
+        scope: '/coyle-rail-timesheet/',
+        start_url: '/coyle-rail-timesheet/',
         icons: [
           {
             src: '/icon-192.png',

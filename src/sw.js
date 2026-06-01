@@ -1,6 +1,5 @@
 const CACHE = 'app-v6';
 
-// The injectManifest plugin requires this reference:
 self.__WB_MANIFEST;
 
 self.addEventListener('install', (e) => {
@@ -22,15 +21,21 @@ self.addEventListener('fetch', (e) => {
   );
 });
 
+function baseUrl() {
+  const scope = self.registration.scope;
+  return scope.endsWith('/') ? scope : scope + '/';
+}
+
 async function navHandler(e) {
   const cache = await caches.open(CACHE);
   const cached = await cache.match(e.request, { ignoreSearch: true });
   if (cached) return cached;
-  const idx = await cache.match('/index.html', { ignoreSearch: true });
+  const idxUrl = baseUrl() + 'index.html';
+  const idx = await cache.match(idxUrl, { ignoreSearch: true });
   if (idx) return idx;
   try {
     const resp = await fetch(e.request);
-    if (resp.ok) { cache.put(e.request, resp.clone()); cache.put('/index.html', resp.clone()); }
+    if (resp.ok) { cache.put(e.request, resp.clone()); cache.put(idxUrl, resp.clone()); }
     return resp;
   } catch {
     const keys = await cache.keys();
